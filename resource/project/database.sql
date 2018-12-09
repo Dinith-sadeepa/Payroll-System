@@ -1,0 +1,100 @@
+DROP DATABASE IF EXISTS PayrollSystem;
+CREATE DATABASE PayrollSystem;
+USE PayrollSystem;
+
+CREATE TABLE Employee(
+	empId INT NOT NULL AUTO_INCREMENT,
+	empName VARCHAR(100),
+	empNIC VARCHAR(20),
+	empAddress VARCHAR(100),
+	CONSTRAINT PRIMARY KEY(empId)
+);
+
+CREATE TABLE Designation(
+	desId INT NOT NULL AUTO_INCREMENT,
+	desDescription VARCHAR(100),
+	desBasicSalary DECIMAL(10,2),
+	CONSTRAINT PRIMARY KEY(desId)
+);
+
+CREATE TABLE DesignationDetails(
+	desDetId INT NOT NULL AUTO_INCREMENT,
+	empId INT, 
+	desId INT,
+	dateSince DATE,
+	CONSTRAINT PRIMARY KEY(desDetId),
+	CONSTRAINT FOREIGN KEY(empId) REFERENCES Employee(empId)
+	ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT FOREIGN KEY(desId) REFERENCES Designation(desId)
+	ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE BackupEmployeeDesignation(
+	user VARCHAR(100),
+	empId INT, 
+	previous_desId INT,
+	current_desId INT,
+	dateSince DATE
+);
+
+CREATE TABLE SalaryAdvanced(
+	saAdId INT NOT NULL AUTO_INCREMENT,
+	desDetId INT,
+	getDate DATE,
+	amount DECIMAL(10,2),
+	CONSTRAINT PRIMARY KEY(saAdId),
+	CONSTRAINT FOREIGN KEY(desDetId) REFERENCES DesignationDetails(desDetId)
+	ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE MonthlyWorkDetails(
+	mSId INT NOT NULL AUTO_INCREMENT,
+	desDetId INT,
+	getDate DATE,
+	toMonth VARCHAR(100),
+	dayMustWork INT,
+	workedDays INT,
+	totalOTHours INT,
+	CONSTRAINT PRIMARY KEY(mSId),
+	CONSTRAINT FOREIGN KEY(desDetId) REFERENCES DesignationDetails(desDetId)
+	ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE MonthlyFinalSalary(
+	mFSID INT NOT NULL AUTO_INCREMENT,
+	mSId INT,
+	totalAllowencesRate INT,
+	noPay DECIMAL(10,2),
+	otPay DECIMAL(10,2),
+	SalaryAdvanced DECIMAL(10,2),
+	EPFPay DECIMAL(10,2),
+	ETFPay DECIMAL(10,2),
+	netSalary DECIMAL(10,2),
+	CONSTRAINT PRIMARY KEY(mFSID),
+	CONSTRAINT FOREIGN KEY(mSId) REFERENCES MonthlyWorkDetails(mSId)
+	ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+
+CREATE TABLE Attendance(
+	attId INT NOT NULL AUTO_INCREMENT,
+	desDetId INT,
+	attDate DATE,
+	status VARCHAR(100),
+	inTime TIME,
+	outTime TIME,
+	otHours TIME,
+	CONSTRAINT PRIMARY KEY(attId),
+	CONSTRAINT FOREIGN KEY(desDetId) REFERENCES DesignationDetails(desDetId)
+	ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE Allowences(
+	allowenceDescription VARCHAR(20),
+	rate INT
+);
+
+CREATE TABLE ConfigTable(
+	configDescription VARCHAR(20),
+	configRate INT
+);

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="salaryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="1308.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.payroll.controller.SalaryController">
+  <tabs>
+    <Tab text="Net Salary">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+               <children>
+                  <AnchorPane prefHeight="73.0" prefWidth="1308.0" style="-fx-background-color: grey;">
+                     <children>
+                        <Label layoutX="424.0" layoutY="7.0" prefHeight="60.0" prefWidth="298.0" text="NET SALARY" textFill="#f2f2f2">
+                           <font>
+                              <Font name="Arial Black" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="dateLabel1" layoutX="1041.0" layoutY="14.0" prefHeight="45.0" prefWidth="216.0" text="Current Date" textFill="#222121">
+                           <font>
+                              <Font name="Times New Roman" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="872.0" layoutY="14.0" prefHeight="45.0" prefWidth="162.0" text="Current Date" textFill="#222121">
+                           <font>
+                              <Font name="Times New Roman" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="614.0" layoutY="172.0" prefHeight="200.0" prefWidth="200.0" />
+                  <TitledPane animated="false" layoutX="70.0" layoutY="92.0" prefHeight="134.0" prefWidth="1101.0" text="Employee Details">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="189.0" prefWidth="1099.0" style="-fx-background-color: white;">
+                           <children>
+                              <JFXTextField fx:id="eNameNetText" focusColor="#7c7c7c" labelFloat="true" layoutX="168.0" layoutY="28.0" onAction="#eNameNetTextAction" prefHeight="47.0" prefWidth="198.0" promptText="Employee Name">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="eNetNICText" editable="false" focusColor="#7c7c7c" labelFloat="true" layoutX="401.0" layoutY="28.0" prefHeight="47.0" prefWidth="204.0" promptText="Employee NIC">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="eNetDesignationText" editable="false" focusColor="#7c7c7c" labelFloat="true" layoutX="650.0" layoutY="28.0" prefHeight="47.0" prefWidth="190.0" promptText="Employee Designation">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="eIdTNetext" focusColor="#7c7c7c" labelFloat="true" layoutX="23.0" layoutY="28.0" onAction="#eIdTNetextAction" prefHeight="47.0" prefWidth="115.0" promptText="Employee ID">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="eDayMustWorkedText" focusColor="#7c7c7c" labelFloat="true" layoutX="869.0" layoutY="28.0" prefHeight="47.0" prefWidth="190.0" promptText="Day Must Work">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane animated="false" disable="true" layoutX="70.0" layoutY="250.0" prefHeight="134.0" prefWidth="1101.0" text="Salary Details">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="189.0" prefWidth="1099.0" style="-fx-background-color: white;">
+                           <children>
+                              <JFXTextField fx:id="basicSalaryText" focusColor="#7c7c7c" labelFloat="true" layoutX="21.0" layoutY="24.0" prefHeight="47.0" prefWidth="164.0" promptText="Basic Salary">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="epfRateText" focusColor="#7c7c7c" labelFloat="true" layoutX="195.0" layoutY="24.0" prefHeight="47.0" prefWidth="79.0" promptText="EPF rate">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="etfRateText" focusColor="#7c7c7c" labelFloat="true" layoutX="291.0" layoutY="24.0" prefHeight="47.0" prefWidth="79.0" promptText="ETF Rate">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="salaryAdvancedText" focusColor="#7c7c7c" labelFloat="true" layoutX="387.0" layoutY="24.0" prefHeight="47.0" prefWidth="139.0" promptText="Salary advanced">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="noPayText" focusColor="#7c7c7c" labelFloat="true" layoutX="550.0" layoutY="24.0" prefHeight="47.0" prefWidth="139.0" promptText="No Pay">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="allowencesTotalText" focusColor="#7c7c7c" labelFloat="true" layoutX="713.0" layoutY="24.0" prefHeight="47.0" prefWidth="193.0" promptText="Allowences Total Rate">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="otPayText" focusColor="#7c7c7c" labelFloat="true" layoutX="942.0" layoutY="24.0" prefHeight="47.0" prefWidth="107.0" promptText="OT Hours">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <Label layoutX="94.0" layoutY="423.0" prefHeight="60.0" prefWidth="686.0" text="Net Salary = (Basic_salary + OT + allowences) - (Salary advanced + No Pay + ETF)">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="187.0" layoutY="493.0" prefHeight="60.0" prefWidth="298.0" text="NET SALARY" textFill="#222121">
+                     <font>
+                        <Font name="Arial Black" size="41.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="netSalaryLabel" layoutX="528.0" layoutY="493.0" prefHeight="60.0" prefWidth="236.0" text="Amount" textFill="#222121">
+                     <font>
+                        <Font name="Arial Black" size="41.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="netSalaryAddButton" disable="true" layoutX="885.0" layoutY="498.0" onAction="#netSalaryAddButtonAction" prefHeight="49.0" prefWidth="164.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 20px; -fx-border-width: 2px; -fx-background-radius: 20px;" text="Add">
+                     <font>
+                        <Font name="Times New Roman Bold" size="26.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="netSalaryCancelButton" layoutX="1072.0" layoutY="498.0" onAction="#netSalaryCancelButtonAction" prefHeight="49.0" prefWidth="164.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 20px; -fx-border-width: 2px; -fx-background-radius: 20px;" text="Cancel">
+                     <font>
+                        <Font name="Times New Roman Bold" size="26.0" />
+                     </font>
+                  </JFXButton>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Salary Advanced">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="415.0" prefWidth="705.0" style="-fx-background-color: white;">
+               <children>
+                  <AnchorPane prefHeight="73.0" prefWidth="1308.0" style="-fx-background-color: grey;">
+                     <children>
+                        <Label layoutX="344.0" layoutY="7.0" prefHeight="60.0" prefWidth="459.0" text="SALARY ADVANCED" textFill="#f2f2f2">
+                           <font>
+                              <Font name="Arial Black" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="dateLabel" layoutX="1046.0" layoutY="15.0" prefHeight="45.0" prefWidth="216.0" text="Current Date" textFill="#222121">
+                           <font>
+                              <Font name="Times New Roman" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="877.0" layoutY="15.0" prefHeight="45.0" prefWidth="162.0" text="Current Date" textFill="#222121">
+                           <font>
+                              <Font name="Times New Roman" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <TitledPane animated="false" layoutX="47.0" layoutY="117.0" prefHeight="134.0" prefWidth="1213.0" text="Employee Details">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="189.0" prefWidth="1099.0" style="-fx-background-color: white;">
+                           <children>
+                              <JFXTextField fx:id="eNameText" focusColor="#7c7c7c" labelFloat="true" layoutX="148.0" layoutY="28.0" onAction="#eNameTextAction" prefHeight="47.0" prefWidth="291.0" promptText="Employee Name">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="eNICText" editable="false" focusColor="#7c7c7c" labelFloat="true" layoutX="469.0" layoutY="24.0" prefHeight="47.0" prefWidth="243.0" promptText="Employee NIC">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="eDesignationText" editable="false" focusColor="#7c7c7c" labelFloat="true" layoutX="734.0" layoutY="24.0" prefHeight="47.0" prefWidth="190.0" promptText="Employee Designation">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="eBasicSalaryText" editable="false" focusColor="#7c7c7c" labelFloat="true" layoutX="970.0" layoutY="24.0" prefHeight="47.0" prefWidth="227.0" promptText="Employee Basic Salary">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="eIdText" focusColor="#7c7c7c" labelFloat="true" layoutX="14.0" layoutY="28.0" onAction="#eIdTextAction" prefHeight="47.0" prefWidth="115.0" promptText="Employee ID">
+                                 <font>
+                                    <Font name="Times New Roman" size="20.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <JFXTextField fx:id="amountText" focusColor="#7c7c7c" labelFloat="true" layoutX="567.0" layoutY="344.0" prefHeight="47.0" prefWidth="291.0" promptText="Amount">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="181.0" layoutY="344.0" prefHeight="60.0" prefWidth="279.0" text="SALARY ADVANCED">
+                     <font>
+                        <Font name="Times New Roman" size="26.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="advancedAddButton" disable="true" layoutX="846.0" layoutY="448.0" onAction="#advancedAddButtonAction" prefHeight="49.0" prefWidth="164.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 20px; -fx-border-width: 2px; -fx-background-radius: 20px;" text="Add">
+                     <font>
+                        <Font name="Times New Roman Bold" size="26.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="advancedCancelButton" layoutX="1033.0" layoutY="448.0" onAction="#advancedCancelButtonAction" prefHeight="49.0" prefWidth="164.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 20px; -fx-border-width: 2px; -fx-background-radius: 20px;" text="Cancel">
+                     <font>
+                        <Font name="Times New Roman Bold" size="26.0" />
+                     </font>
+                  </JFXButton>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="View Salary">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+               <children>
+                  <AnchorPane prefHeight="73.0" prefWidth="1308.0" style="-fx-background-color: grey;">
+                     <children>
+                        <Label layoutX="488.0" layoutY="7.0" prefHeight="60.0" prefWidth="333.0" text="VIEW SALARY" textFill="#f2f2f2">
+                           <font>
+                              <Font name="Arial Black" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="dateLabel2" layoutX="1046.0" layoutY="15.0" prefHeight="45.0" prefWidth="216.0" text="Current Date" textFill="#222121">
+                           <font>
+                              <Font name="Times New Roman" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="877.0" layoutY="15.0" prefHeight="45.0" prefWidth="162.0" text="Current Date" textFill="#222121">
+                           <font>
+                              <Font name="Times New Roman" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <TableView fx:id="salaryTable" layoutX="68.0" layoutY="140.0" prefHeight="239.0" prefWidth="1173.0">
+                     <columns>
+                        <TableColumn prefWidth="112.00003051757812" text="mFSID" />
+                        <TableColumn prefWidth="186.0" text="Employee Id" />
+                        <TableColumn prefWidth="175.0" text="Allowences Rate" />
+                        <TableColumn prefWidth="168.0" text="no Pay" />
+                        <TableColumn prefWidth="178.0" text="OT Pay" />
+                        <TableColumn prefWidth="175.0" text="Salary advanced" />
+                        <TableColumn prefWidth="175.0" text="EPF Pay" />
+                        <TableColumn prefWidth="175.0" text="ETF Pay" />
+                        <TableColumn prefWidth="175.0" text="Net Salary" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>

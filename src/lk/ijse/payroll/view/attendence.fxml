@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="attendancePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="1308.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.payroll.controller.AttendenceController">
+   <children>
+      <AnchorPane prefHeight="73.0" prefWidth="1308.0" style="-fx-background-color: grey;">
+         <children>
+            <Label layoutX="385.0" layoutY="7.0" prefHeight="60.0" prefWidth="334.0" text="ATTENDENCE" textFill="#f2f2f2">
+               <font>
+                  <Font name="Arial Black" size="41.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateLabel" layoutX="1027.0" layoutY="12.0" prefHeight="49.0" prefWidth="184.0" text="Current Date">
+               <font>
+                  <Font name="Times New Roman" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateLabel1" layoutX="871.0" layoutY="12.0" prefHeight="49.0" prefWidth="134.0" text="Current Date">
+               <font>
+                  <Font name="Times New Roman" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TitledPane fx:id="eAttendenceDetailPane" animated="false" layoutX="834.0" layoutY="95.0" prefHeight="195.0" prefWidth="449.0" text="Employee Attendence Details">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="447.0" style="-fx-background-color: white;">
+               <children>
+                  <JFXTextField fx:id="aInText" focusColor="#7c7c7c" labelFloat="true" layoutX="23.0" layoutY="29.0" prefHeight="47.0" prefWidth="133.0" promptText="IN">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="aOutText" focusColor="#7c7c7c" labelFloat="true" layoutX="232.0" layoutY="29.0" prefHeight="47.0" prefWidth="133.0" promptText="OUT">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="leaveButton" disable="true" layoutX="286.0" layoutY="104.0" onAction="#leaveButtonAction" prefHeight="40.0" prefWidth="134.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 20px; -fx-border-width: 2px; -fx-background-radius: 20px;" text="Leave">
+                     <font>
+                        <Font name="Times New Roman Bold" size="26.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <JFXButton fx:id="addButton" layoutX="530.0" layoutY="300.0" onAction="#addButtonAction" prefHeight="40.0" prefWidth="134.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 20px; -fx-border-width: 2px; -fx-background-radius: 20px;" text="Add">
+         <font>
+            <Font name="Times New Roman Bold" size="26.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="cancelButton" layoutX="700.0" layoutY="300.0" onAction="#cancelButtonAction" prefHeight="42.0" prefWidth="134.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-border-radius: 20px; -fx-border-width: 2px; -fx-background-radius: 20px;" text="Cancel">
+         <font>
+            <Font name="Times New Roman Bold" size="26.0" />
+         </font>
+      </JFXButton>
+      <TitledPane animated="false" layoutX="24.0" layoutY="97.0" prefHeight="145.0" prefWidth="792.0" text="Employee Details">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="59.0" prefWidth="1027.0" style="-fx-background-color: white;">
+               <children>
+                  <JFXTextField fx:id="eNameText" editable="false" focusColor="#7c7c7c" labelFloat="true" layoutX="169.0" layoutY="33.0" onAction="#eNameTextAction" prefHeight="47.0" prefWidth="174.0" promptText="Employee Name">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="eNICText" editable="false" focusColor="#7c7c7c" labelFloat="true" layoutX="395.0" layoutY="33.0" prefHeight="47.0" prefWidth="157.0" promptText="Employee NIC">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="eDesignationText" editable="false" focusColor="#7c7c7c" labelFloat="true" layoutX="592.0" layoutY="29.0" prefHeight="47.0" prefWidth="184.0" promptText="Employee Designation">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="eIdText" focusColor="#7c7c7c" labelFloat="true" layoutX="26.0" layoutY="33.0" onAction="#eIdTextAction" prefHeight="47.0" prefWidth="109.0" promptText="Employee Id">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TableView fx:id="attendanceTable" layoutX="39.0" layoutY="381.0" prefHeight="239.0" prefWidth="1173.0">
+         <columns>
+            <TableColumn prefWidth="112.00003051757812" text="Attendance Id" />
+            <TableColumn prefWidth="186.0" text="Employee Id" />
+            <TableColumn prefWidth="175.0" text="Date" />
+            <TableColumn prefWidth="168.0" text="Status" />
+            <TableColumn prefWidth="178.0" text="In Time" />
+            <TableColumn prefWidth="175.0" text="Out Time" />
+            <TableColumn prefWidth="175.0" text="OT Hours" />
+         </columns>
+      </TableView>
+      <TitledPane animated="false" layoutX="24.0" layoutY="259.0" prefHeight="83.0" prefWidth="441.0" text="Employee Status">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="59.0" prefWidth="1027.0" style="-fx-background-color: white;">
+               <children>
+                  <JFXRadioButton fx:id="absentRButton" layoutX="209.0" layoutY="14.0" onAction="#absentRButtonAction" prefHeight="23.0" prefWidth="118.0" text="Absent">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="status" />
+                     </toggleGroup>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="presentRButton" layoutX="37.0" layoutY="14.0" onAction="#presentRButtonAction" prefHeight="23.0" prefWidth="118.0" selected="true" text="Present" toggleGroup="$status">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font>
+                  </JFXRadioButton>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+   </children>
+</AnchorPane>
